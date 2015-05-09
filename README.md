@@ -1,6 +1,8 @@
-## Anatec's code test
+# Anatec's code test
 
-### Installation
+[![Build Status](https://travis-ci.org/maukoquiroga/anatec.svg?branch=master)](https://travis-ci.org/maukoquiroga/anatec)
+
+## Installation
 
     $ git clone git@github.com:maukoquiroga/anatec.git
     $ cd anatec
@@ -11,10 +13,10 @@
 
   Note: Don't forget to setup your ```database.yml``` file.
 
-### Usage
+## Usage
 
   Visit ```localhost:5000``` and signup or signin with email ```jean[1..20]@serian.fr``` and password ```password```.
 
-### Tests
+## Tests
 
     $ bundle exec rspec
