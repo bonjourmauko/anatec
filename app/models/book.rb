@@ -5,7 +5,7 @@ class Book < ActiveRecord::Base
   validates :title, presence: true
   validates :author, presence: true
 
-  scope :lent, -> { where.not(borrower: nil) }
+  scope :lent_books, -> { where.not(borrower: nil) }
 
   def lend(user)
     return if owner.id == user.id
