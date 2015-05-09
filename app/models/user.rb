@@ -3,5 +3,10 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :trackable, :validatable
-  has_many :books
+
+  has_many :owned_books, class_name: 'Book', foreign_key: 'owner_id', dependent: :destroy
+  has_many :borrowed_books, class_name: 'Book', foreign_key: 'borrower_id', dependent: :nullify
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 end

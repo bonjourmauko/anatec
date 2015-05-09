@@ -51,6 +51,9 @@ gem 'bootstrap-sass-extras'
 gem 'validates_formatting_of'
 gem 'tzinfo-data'
 
+# Populate
+gem 'faker'
+
 group :production do
   gem 'heroku_rails_deflate'
   gem 'newrelic_rpm'
@@ -67,6 +70,7 @@ group :development do
   gem 'better_errors'
   gem 'foreman'
   gem 'pry-rails'
+  gem 'rubocop'
 end
 
 group :test do

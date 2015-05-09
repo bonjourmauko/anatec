@@ -11,28 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150504220230) do
+ActiveRecord::Schema.define(version: 20150505001834) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "authors", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "books", force: true do |t|
-    t.integer  "author_id"
     t.string   "title"
-    t.integer  "user_id"
+    t.string   "author"
+    t.integer  "owner_id"
+    t.integer  "borrower_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "books", ["author_id"], name: "index_books_on_author_id", using: :btree
-  add_index "books", ["user_id"], name: "index_books_on_user_id", using: :btree
+  add_index "books", ["borrower_id"], name: "index_books_on_borrower_id", using: :btree
+  add_index "books", ["owner_id"], name: "index_books_on_owner_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -47,6 +41,8 @@ ActiveRecord::Schema.define(version: 20150504220230) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

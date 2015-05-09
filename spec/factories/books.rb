@@ -1,9 +1,6 @@
 FactoryGirl.define do
   factory :book do
-    author nil
-title "MyString"
-user nil
-user nil
+    title { Faker::Company.catch_phrase }
+    author { Faker::Name.name }
   end
-
 end
