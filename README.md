@@ -1,6 +1,10 @@
 # Anatec's code test
 
 [![Build Status](https://travis-ci.org/maukoquiroga/anatec.svg?branch=master)](https://travis-ci.org/maukoquiroga/anatec)
+[![Dependency Status](https://gemnasium.com/maukoquiroga/anatec.svg)](https://gemnasium.com/maukoquiroga/anatec)
+[![Coverage Status](https://coveralls.io/repos/maukoquiroga/anatec/badge.svg)](https://coveralls.io/r/maukoquiroga/anatec)
+[![Code Climate](https://codeclimate.com/github/maukoquiroga/anatec/badges/gpa.svg)](https://codeclimate.com/github/maukoquiroga/anatec)
+[![Inline docs](http://inch-ci.org/github/maukoquiroga/anatec.svg?branch=master)](http://inch-ci.org/github/maukoquiroga/anatec)
 
 ## Installation
 
