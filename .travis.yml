@@ -3,5 +3,8 @@ language: ruby
 rvm:
   - 2.2.2
 
+before_script:
+  - bundle exec db:create db:migrate
+
 notifications:
   email: false
