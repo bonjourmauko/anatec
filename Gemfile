@@ -67,6 +67,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'awesome_print'
   gem 'better_errors'
   gem 'foreman'
   gem 'pry-rails'
