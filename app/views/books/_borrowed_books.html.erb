@@ -1,0 +1,28 @@
+<h2>Borrowed Books</h2>
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th class='col-md-3'><%= Book.human_attribute_name(:title) %></th>
+      <th class='col-md-3'><%= Book.human_attribute_name(:author) %></th>
+      <th class='col-md-3'><%= Book.human_attribute_name(:owner) %></th>
+      <th class='col-md-3'><%= t '.actions', default: t('helpers.actions') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% books.each do |book| %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.author %></td>
+        <td><%= book.owner_full_name %></td>
+        <td>
+          <%= form_for book, url: return_book_path(book),
+                             method: :patch,
+                             html: { class: 'form-horizontal form-model' } do |f| %>
+
+            <%= f.submit 'Return', class: 'btn btn-xs btn-primary' %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,9 +1,10 @@
 class BooksController < ApplicationController
   # GET /books
   def index
-    @owned_books    = current_user.owned_books
-    @lent_books     = current_user.lent_books
-    @borrowed_books = current_user.borrowed_books
+    @owned_books    = current_user.owned_books.order(:title)
+    @lent_books     = current_user.lent_books.order(:title)
+    @borrowed_books = current_user.borrowed_books.order(:title)
+    @users          = User.without(current_user).order(:first_name)
   end
 
   # GET /books/new

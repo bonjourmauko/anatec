@@ -5,6 +5,9 @@ class Book < ActiveRecord::Base
   validates :title, presence: true
   validates :author, presence: true
 
+  delegate :full_name, to: :borrower, prefix: true, allow_nil: true
+  delegate :full_name, to: :owner, prefix: true, allow_nil: true
+
   scope :lent_books, -> { where.not(borrower: nil) }
 
   def lend(user)

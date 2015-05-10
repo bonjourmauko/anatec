@@ -18,4 +18,10 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
 
   delegate :lent_books, to: :owned_books
+
+  scope :without, ->(user) { where.not(id: user) }
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

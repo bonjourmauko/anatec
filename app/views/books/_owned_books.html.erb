@@ -1,0 +1,33 @@
+<h2>Owned Books</h2>
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th class='col-md-3'><%= Book.human_attribute_name(:title) %></th>
+      <th class='col-md-6'><%= Book.human_attribute_name(:author) %></th>
+      <th class='col-md-3'><%= t '.actions', default: t('helpers.actions') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% books.each do |book| %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.author %></td>
+        <td>
+          <% unless book.lent? %>
+            <%= form_for book, url: lend_book_path(book),
+                               method: :patch,
+                               html: { class: 'form-horizontal form-model' } do |f| %>
+
+              <%= f.submit 'Lend', class: 'btn btn-xs btn-primary' %>
+
+              <%= f.collection_select :borrower_id,
+                                      users,
+                                      :id,
+                                      :full_name %>
+            <% end %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
