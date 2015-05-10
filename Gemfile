@@ -41,10 +41,7 @@ gem 'puma'
 
 gem 'bundler'
 
-gem 'simple_form'
 gem 'devise', github: 'plataformatec/devise'
-gem 'omniauth'
-gem 'omniauth-facebook'
 gem 'binding_of_caller'
 gem 'bootstrap-sass', github: 'twbs/bootstrap-sass'
 gem 'bootstrap-sass-extras'
